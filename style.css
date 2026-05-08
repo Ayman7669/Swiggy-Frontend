@@ -1,0 +1,123 @@
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+   align-items: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+.header-logo{
+
+    height:auto;
+    width: 50px;
+    border-radius: 50%;
+}
+.search{
+    display: flex;
+    flex-wrap: wrap;
+    width: 250%;
+    background-color: hsl(16, 83%, 59%);
+    font-size: 16px;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+input::placeholder{
+    color: #ffffff;
+}
+.search-bar{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    text-align: center;
+    margin-right: 13px;
+    border:none;
+    background-color: transparent;
+  
+}
+.nav-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px 10px;
+}
+.nav-items{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 5px 10px;
+    margin: 5px 10px;    
+    justify-content: space-between;
+
+}
+.list{
+    padding: 7px;
+    background-color:hsl(16, 83%, 59%);
+    justify-content: space-between;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.main-content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 10px;
+    margin:5px;
+    margin-right: 0px;
+    gap: 8px;
+    text-align: center;
+    justify-content: center;
+  
+}
+.restaurant-card{
+    display: flex;
+    flex-wrap: wrap;
+    width: 250px;
+    justify-content: center;
+    border: 1px solid black;
+    height: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.res-logo{
+    width: 200px;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+
+}
+.card-details{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    justify-content: center;
+    text-align: center;
+   
+}
+.res-title{
+    font-size: 20px;
+    justify-content: center;
+    text-align: center;
+    color: rgb(252, 160, 95);
+}
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 250px;
+    background-color: hsl(16, 83%, 59%);
+}

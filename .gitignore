@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.log
+Applayout.js
+Header.js
+Footer.js
+Body.js
+
+.parcel-cache/
