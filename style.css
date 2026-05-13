@@ -172,6 +172,30 @@ input::placeholder {
   transition: transform 0.3s ease-in-out;
 }
 
+.about {
+  margin-top: 120px;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  box-shadow: 0 0px 28px 0 rgba(0, 0, 0, 0.1);
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15%;
+  border-radius: 10px;
+  
+}
+
+.contact, .cart {
+  margin-top: 120px;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  box-shadow: 0 0px 28px 0 rgba(0, 0, 0, 0, 0.1);
+  border-radius: 10px;
+  justify-content: center;
+}
+
 .res-logo {
   width: 200px;
   border-radius: 5px;
@@ -207,7 +231,12 @@ input::placeholder {
   display: flex;
   padding: 6px;
   margin-top: 22px;
+  margin-left: 10px;
   color: #000;
+  border: none;
+  border-radius: 3px;
+  font-weight: 300px;
+  font-size: 16px;
   background-color: hsl(16, 83%, 59%);
 }
 

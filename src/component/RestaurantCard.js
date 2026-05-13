@@ -5,8 +5,16 @@ const base_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
 const RestaurantCard = ({ resdata }) => {
-  const { name, cuisines, avgRating, sla, costForTwo, cloudinaryImageId ,areaName } =
-    resdata;
+  const {
+    name,
+    cuisines,
+    avgRating,
+    sla,
+    costForTwo,
+    cloudinaryImageId,
+    areaName,
+    slaString,
+  } = resdata;
 
   return (
     <div className="restaurant-card">
@@ -22,7 +30,8 @@ const RestaurantCard = ({ resdata }) => {
         <h4>
           {sla.deliveryTime} mins | {costForTwo}
         </h4>
-        <h4>{areaName}</h4>
+        <h4>{areaName} | {sla.slaString}</h4>
+        
       </div>
     </div>
   );
