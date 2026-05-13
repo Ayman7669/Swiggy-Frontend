@@ -6,17 +6,14 @@ const Button = () => {
   return (
     <div className="btn-container">
       <button
+        className="filter-btn"
         onClick={() => {
           console.log("Before array sorying", resArr);
 
-          const filterArr = resArr.filter((resobj) => {
-            return resobj.avgRating > 4;
+          let filterArr = filtered.filter((resobj) => {
+            return resobj.info.avgRating > 4;
           });
-
-          console.log("filter arr is :", filterArr);
-          resArr = filterArr;
-
-          console.log("Original array is:", resArr);
+          setfilter(filterArr);
         }}
       >
         Top Rated
