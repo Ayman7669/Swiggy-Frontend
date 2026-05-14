@@ -3,6 +3,7 @@ import { useState } from "react";
 import resArr from "../utils/dummydata.js";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer.js";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [hotelList, setHotelList] = useState([]);
@@ -12,7 +13,7 @@ const Body = () => {
       const response = await fetch(
         "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=17.38430&lng=78.45830&carousel=true&third_party_vendor=1",
       );
-      const json = await response.json(); 
+      const json = await response.json();
 
       setHotelList(
         json.data.cards[1]?.card?.card?.gridElements?.infoWithStyle
@@ -27,7 +28,7 @@ const Body = () => {
         setHotelList(
           json.data.cards[1]?.card?.card?.gridElements?.infoWithStyle
             ?.restaurants,
-        ); 
+        );
       }
     };
 
@@ -44,7 +45,12 @@ const Body = () => {
     <div className="restaurant-container">
       {hotelList.map((restaurant) => {
         return (
-          <RestaurantCard key={restaurant.info.id} resdata={restaurant.info} />
+          <Link className="Links" key={restaurant.info.id} to={`/restaurant/${restaurant.info.id}`}>
+            <RestaurantCard
+              key={restaurant.info.id}
+              resdata={restaurant.info}
+            />
+          </Link>
         );
       })}
     </div>

@@ -10,21 +10,22 @@ import Contact from "./src/component/Contact";
 import Cart from "./src/component/Cards";
 import About from "./src/component/About";
 import Home from "./src/component/Home";
+import RestaurantMenu from "./src/component/RestaurantMenu";
 
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <AppLayout />, // 1. AppLayout MUST be here because it has the <Outlet />
+    element: <AppLayout />,
     errorElement: <Error />,
     children: [
-      // 2. MUST be lowercase 'c'
+      
       {
-        path: "/", // Default home (localhost:1234)
+        path: "/", 
         element: <Home />,
       },
       {
-        path: "/restaurant", // This will render at localhost:1234/restaurant
-        element: <Body />, // Or a specific Restaurant component
+        path: "/restaurant", 
+        element: <Body />, 
       },
       {
         path: "/about",
@@ -38,6 +39,10 @@ const appRouter = createBrowserRouter([
         path: "/cart",
         element: <Cart />,
       },
+      {
+        path:"/restaurant/:resId",
+        element: <RestaurantMenu/>
+      }
     ],
   },
 ]);

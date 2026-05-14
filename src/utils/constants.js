@@ -1,2 +1,2 @@
-const base_URL="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
+const base_URL="https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=17.38430&lng=78.45830&carousel=true&third_party_vendor=1"
 const brand_URl="https://ik.imagekit.io/acrrubsd0/Untitled%20design.png?updatedAt=1770381393453"
