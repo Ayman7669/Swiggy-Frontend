@@ -3,11 +3,11 @@ import ReactDOM from "react-dom/client";
 import { brand_URl } from "../utils/constants";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/userContext";
-
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
   const [islogin, setislogin] = useState(false);
-  
+  const isOnline = useOnlineStatus();
   const Usercontext = useContext(UserContext);
   const { name } = useContext(UserContext);
 
@@ -28,7 +28,28 @@ const Header = () => {
       </div>
       <div className="nav-container">
         <ul className="nav-items">
-          
+          {isOnline ? (
+            <li className="list"
+              style={{
+                backgroundColor: "green",
+                color: "white",
+                boxShadow: " 0px 0px 28px 2px rgba(0, 0, 0, 0.141)",
+              }}
+            >
+              🟢 Online
+            </li>
+          ) : (
+            <li className="list"
+              style={{
+                backgroundColor: "red",
+                color: "white",
+                boxShadow: " 0px 0px 28px 2px rgba(0, 0, 0, 0.141)",
+              }}
+            >
+              🔴 Offline
+            </li>
+          )}
+
           <Link to="/restaurant">
             <li className="list" style={{ textDecoration: "none" }}>
               Home

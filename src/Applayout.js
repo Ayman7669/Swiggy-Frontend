@@ -6,6 +6,7 @@ import Footer from "./component/Footer";
 import Button from "./component/Button";
 import { Outlet } from "react-router-dom";
 import UserContext from "./utils/userContext";
+import useOnlineStatus from "./utils/useOnlineStatus";
 import Offline from "./component/Offline";
 
 const AppLayout = () => {
@@ -15,7 +16,7 @@ const AppLayout = () => {
       <UserContext.Provider value={{ name: "Ayman", email: "ayman@gmail.com" }}>
         <Header />
         <Button />
-        <Outlet /> 
+        {isOnline ? <Outlet /> : <Offline />}
         <Footer />
       </UserContext.Provider>
     </div>
