@@ -18,14 +18,13 @@ const appRouter = createBrowserRouter([
     element: <AppLayout />,
     errorElement: <Error />,
     children: [
-      
       {
-        path: "/", 
+        path: "/",
         element: <Home />,
       },
       {
-        path: "/restaurant", 
-        element: <Body />, 
+        path: "/restaurant",
+        element: <Body />,
       },
       {
         path: "/about",
@@ -40,12 +39,16 @@ const appRouter = createBrowserRouter([
         element: <Cart />,
       },
       {
-        path:"/restaurant/:resId",
-        element: <RestaurantMenu/>
-      }
+        path: "/restaurant/:resId",
+        element: <RestaurantMenu />,
+      },
+      // Add the future flags here to opt-in early and clear console logs
+      {
+        v7_startTransition: true,
+        v7_relativeSplatPath: true, // Good idea to add this one too!
+      },
     ],
   },
 ]);
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={appRouter} />,
-);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<RouterProvider router={appRouter} />);
