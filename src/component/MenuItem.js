@@ -1,31 +1,3 @@
-// import React from "react";
-
-// const MenuItem = (props) => {
-//   const { name, price, ratings, description, imageId } = props;
-//   return (
-//     <div className="menu-card-container">
-//       <div className="menu-card-detail">
-//         <h2>{name}</h2>
-//         <h5>₹{price / 100}</h5>
-//         <h5>
-//           ⭐{ratings.aggregatedRating.rating} (
-//           {ratings.aggregatedRating.ratingCountV2})
-//         </h5>
-//         <h6>{description}</h6>
-
-//         <img
-//           src={
-//             "https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.38430&lng=78.45830&restaurantId=" +
-//             imageId
-//           }
-//           alt={name}
-//           className="menu-item-image"
-//         />
-//       </div>
-//     </div>
-//   );
-// };
-// export default MenuItem;
 
 import React from "react";
 

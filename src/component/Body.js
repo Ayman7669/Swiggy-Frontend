@@ -14,7 +14,7 @@ const Body = () => {
         "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=17.38430&lng=78.45830&carousel=true&third_party_vendor=1",
       );
       const json = await response.json();
-      console.log(json.data.cards.length );
+      // console.log(json.data.cards.length );
 
       if (json.data.cards.length > 12) {
         setHotelList(
