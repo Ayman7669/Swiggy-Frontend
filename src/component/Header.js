@@ -4,32 +4,49 @@ import { brand_URl } from "../utils/constants";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/userContext";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import HotelListContext from "../utils/HotelListCotext";
 
 const Header = () => {
   const [islogin, setislogin] = useState(false);
   const isOnline = useOnlineStatus();
   const Usercontext = useContext(UserContext);
   const { name } = useContext(UserContext);
+  const [input, setInput] = useState("");
 
+  const { hotelList, setHotelList } = useContext(HotelListContext);
+  console.log("hotel list from header component", hotelList);
   return (
     <div className="header">
       <div className="logo-container">
-       <Link to={"/restaurant"}><img
-          className="header-logo"
-          src="https://ik.imagekit.io/acrrubsd0/Untitled%20design.png?updatedAt=1770381393453"
-        /></Link> 
+        <Link to={"/restaurant"}>
+          <img
+            className="header-logo"
+            src="https://ik.imagekit.io/acrrubsd0/Untitled%20design.png?updatedAt=1770381393453"
+          />
+        </Link>
       </div>
       <div className="search-bar">
         <input
-          className="search"
           type="text"
-          placeholder="search the restaurant"
+          value={input}
+          placeholder="search the restaurant..."
+          className="search"
+          onChange={(e) => {
+            setInput(e.target.value);
+            const filteredHotelList = hotelList.filter((hotel) => {
+              return hotel.info.name
+                .toLowerCase()
+                .includes(input.toLowerCase());
+            });
+            setHotelList(filteredHotelList);
+          }}
         />
       </div>
       <div className="nav-container">
         <ul className="nav-items">
           {isOnline ? (
-            <li className="list"
+            <li
+              className="list"
               style={{
                 backgroundColor: "green",
                 color: "white",
@@ -39,7 +56,8 @@ const Header = () => {
               🟢 Online
             </li>
           ) : (
-            <li className="list"
+            <li
+              className="list"
               style={{
                 backgroundColor: "red",
                 color: "white",
@@ -54,9 +72,11 @@ const Header = () => {
             <li className="list" style={{ textDecoration: "none" }}>
               Home
             </li>
-            </Link>
-             <Link to={"/grocery"} ><li className="list">Grocery</li></Link>
-          
+          </Link>
+          <Link to={"/grocery"}>
+            <li className="list">Grocery</li>
+          </Link>
+
           <Link to="/about">
             <li className="list" style={{ textDecoration: "none" }}>
               About Us

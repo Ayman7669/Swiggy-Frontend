@@ -1,21 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import resArr from "../utils/dummydata.js";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer.js";
 import { Link } from "react-router-dom";
+import HotelListContext from "../utils/HotelListCotext.js";
 
 const Body = () => {
-  const [hotelList, setHotelList] = useState([]);
-
+  // const [hotelList, setHotelList] = useState([]);
+  const { hotelList, setHotelList } = useContext(HotelListContext);
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
         "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=17.38430&lng=78.45830&carousel=true&third_party_vendor=1",
       );
       const json = await response.json();
-      console.log(json.data.cards.length );
+      console.log(json.data.cards.length); 
 
+      ///checking if length is 12 then 11 will be fetched ,
+      ///if 10 then less then 10 is 9
       if (json.data.cards.length > 12) {
         setHotelList(
           json.data.cards[2]?.card?.card?.gridElements?.infoWithStyle
@@ -27,6 +30,7 @@ const Body = () => {
             ?.restaurants,
         );
       }
+      console.log("this is hotel list from context", hotelList);
     };
 
     fetchData();
@@ -34,10 +38,9 @@ const Body = () => {
 
   // console.log("Hotel List:", hotelList);
 
-  if (!hotelList=== 0) {
+  if (hotelList.length === 0) {
     return <Shimmer />;
   }
- 
 
   return (
     <div className="restaurant-container">
@@ -60,5 +63,3 @@ const Body = () => {
 };
 
 export default Body;
-
-
