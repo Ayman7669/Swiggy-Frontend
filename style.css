@@ -474,21 +474,33 @@ input::placeholder {
   }
 }
 .category-header {
-  padding: 5px;
-  margin: 10px 20px;
   background-color: orange;
   border-radius: 20px;
-  height: 100px;
-}
-.category-container {
-  padding: 22px;
-  width: 60%;
-  height: 250px;
-}
-.arrow {
-  margin: 0px;
+  height: 30%;
   display: flex;
+  padding: 20px 40px;
+  justify-content: center;
+}
+.category-header:hover {
+  background-color: rgba(255, 133, 18, 0.874);
+  cursor: pointer;
+  box-shadow: 0 0 10 0;
+}
+
+.arrow {
+  display: flex;
+  margin: 0px;
   font-size: 1.2em;
   justify-content: space-between;
   width: 99%;
+}
+.menuInfo-container {
+  border: 20px solid transparent;
+  border-radius: 40px;
+  padding: 20px 40px;
+
+  /* Fixed the color syntax by removing the hashtag from 'white' */
+  background:
+    linear-gradient(white, white) padding-box,
+    radial-gradient(circle, #f3f3f3d3, #f19719) border-box;
 }

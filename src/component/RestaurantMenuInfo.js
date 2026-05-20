@@ -8,7 +8,7 @@ const RestaurantMenuInfoCard = ({ menuInfo }) => {
     cuisines,
   } = menuInfo;
   return (
-    <div>
+    <div className="menuInfo-container">
       <h1>{name}</h1>
       <h2>{city}</h2>
       <p>

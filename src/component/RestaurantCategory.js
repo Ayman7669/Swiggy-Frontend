@@ -17,24 +17,35 @@ import MenuItem from "./MenuItem";
 //   );
 // };
 
-const RestaurantCategory = ({ category }) => {
+const RestaurantCategory = ({ category, command, setIndex }) => {
   const { title, itemCards } = category;
 
+  const handleClick = () => {
+    setIndex();
+  };
+
   return (
-    <div className="ategory-containe">
-      <div className="category-header">
-        <h3>{title}</h3>
+    <div className="category-accordian">
+      <div className="category-header" onClick={handleClick}>
         <div className="arrow">
-          <p>{itemCards.length} items</p>
+          <h3>
+            {title} ({itemCards.length})
+          </h3>
           <p>⬇️</p>
         </div>
       </div>
 
-      {itemCards.map((menuItem) => {
-        return (
-          <MenuItem key={menuItem.card.info.id} data={menuItem.card.info} />
-        );
-      })}
+      {command ? (
+        <div className="category-body">
+          {itemCards.map((menuItem) => {
+            return (
+              <MenuItem key={menuItem.card.info.id} data={menuItem.card.info} />
+            );
+          })}
+        </div>
+      ) : (
+        <div><p></p></div>
+      )}
     </div>
   );
 };
