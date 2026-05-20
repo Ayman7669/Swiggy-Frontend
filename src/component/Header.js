@@ -13,7 +13,8 @@ const Header = () => {
   const { name } = useContext(UserContext);
   const [input, setInput] = useState("");
 
-  const { hotelList, setHotelList } = useContext(HotelListContext);
+  const { hotelList, setHotelList, filteredHotelList, setFilteredHotelList } =
+    useContext(HotelListContext);
   console.log("hotel list from header component", hotelList);
   return (
     <div className="header">
@@ -38,7 +39,7 @@ const Header = () => {
                 .toLowerCase()
                 .includes(input.toLowerCase());
             });
-            setHotelList(filteredHotelList);
+            setFilteredHotelList(filteredHotelList);
           }}
         />
       </div>

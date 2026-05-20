@@ -12,10 +12,11 @@ import HotelListContext from "./utils/HotelListCotext";
 
 const AppLayout = () => {
   const isOnline = useOnlineStatus();
-  const [hotelList,setHotelList]=useState([])
+  const [hotelList,setHotelList]=useState();
+  const [filteredHotelList,setFilteredHotelList]=useState();
   return (
     <div>
-      <HotelListContext.Provider value={{hotelList, setHotelList}}>
+      <HotelListContext.Provider value={{hotelList, setHotelList , filteredHotelList , setFilteredHotelList}}>
       <UserContext.Provider value={{ name: "Ayman", email: "ayman@gmail.com" }}>
         <Header />
         <Button />
