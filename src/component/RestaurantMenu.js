@@ -1,9 +1,9 @@
-
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-//import RestaurantMenuInfo from "./RestaurantMenuInfo";
+import RestaurantMenuInfo from "./RestaurantMenuInfo";
 import MenuItem from "./MenuItem";
+import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -18,28 +18,43 @@ const RestaurantMenu = () => {
       );
       const json = await response.json();
       setMenu(json.data.cards[2].card.card);
-      setMenuItems(
-        json.data.cards[5].groupedCard.cardGroupMap.REGULAR.cards[2].card.card
-          .itemCards,
-      );
+      setMenuItems(json.data.cards);
     };
     fetchMenu();
   }, []);
 
   if (!menu) return <h1>Loading...</h1>;
 
+  const categoriesArr =
+    menuItems[5].groupedCard.cardGroupMap.REGULAR.cards.filter((category) => {
+      console.log(category.card.card["@type"]);
+      return (
+        category.card.card["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+      );
+    });
+  console.log("this is category array", categoriesArr);
+  console.log("this is map array", categoriesArr[0].card);
   return (
     <div>
       <h1>Restaurant Menu</h1>
 
-      {/* <RestaurantMenuInfo menuInfo={menu.info} /> */}
+      <RestaurantMenuInfo menuInfo={menu.info} />
 
-      <h2>Menu Items</h2>
+      {/* <h2>Menu Items</h2>
       {menuItems.map((item) => (
         <div key={item.card.info.id}>
           <MenuItem {...item.card.info} />
         </div>
-      ))}
+      ))} */}
+      {categoriesArr.map((categoryObj) => {
+        return (
+          <RestaurantCategory
+            key={categoryObj.card.card.categoryId}
+            category={categoryObj.card.card}
+          />
+        );
+      })}
     </div>
   );
 };

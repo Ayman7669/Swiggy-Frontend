@@ -1,14 +1,15 @@
-
 import React from "react";
 
-const MenuItem = (props) => {
-  const { name, defaultPrice, price, ratings, description, imageId } = props;
+const MenuItem = ({data}) => {
+  const { name, defaultPrice, price, ratings, description, imageId } = data;
   return (
     <div className="menu-item-card">
       <div className="menu-item-info">
         <div className="menu-item-header">
           <h2 className="menu-item-name">{name}</h2>
-          <span className="menu-item-price">₹{defaultPrice||price / 100}</span>
+          <span className="menu-item-price">
+            ₹{defaultPrice || price / 100}
+          </span>
         </div>
 
         <div className="menu-item-rating">

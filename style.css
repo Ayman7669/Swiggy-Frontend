@@ -473,3 +473,22 @@ input::placeholder {
     font-size: 12px;
   }
 }
+.category-header {
+  padding: 5px;
+  margin: 10px 20px;
+  background-color: orange;
+  border-radius: 20px;
+  height: 100px;
+}
+.category-container {
+  padding: 22px;
+  width: 60%;
+  height: 250px;
+}
+.arrow {
+  margin: 0px;
+  display: flex;
+  font-size: 1.2em;
+  justify-content: space-between;
+  width: 99%;
+}
