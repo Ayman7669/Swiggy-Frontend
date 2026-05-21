@@ -27,6 +27,43 @@
 input::placeholder {
   color: #ffffff;
 }
+.header-container-btn {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.header-btn {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff6b35;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.header-img{
+  width: 200px;
+  display: flex;
+  padding: 20px;
+}
+.header-btn:hover {
+  background-color: #e85a2a;
+  transform: translateY(-2px);
+}
+
+.header-btn:active {
+  transform: scale(0.97);
+}
+
+.header-container-btn a {
+  text-decoration: none;
+}
 .search-bar {
   display: flex;
   flex-wrap: wrap;

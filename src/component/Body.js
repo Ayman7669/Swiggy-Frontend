@@ -6,6 +6,7 @@ import Shimmer from "./Shimmer.js";
 import { Link } from "react-router-dom";
 import HotelListContext from "../utils/HotelListCotext.js";
 
+
 const Body = () => {
   const { hotelList, setHotelList, filteredHotelList, setFilteredHotelList } =
     useContext(HotelListContext);
@@ -53,6 +54,7 @@ const Body = () => {
 
   return (
     <div className="restaurant-container">
+      
       {filteredHotelList.map((restaurant) => {
         return (
           <Link

@@ -19,7 +19,7 @@ const AppLayout = () => {
       <HotelListContext.Provider value={{hotelList, setHotelList , filteredHotelList , setFilteredHotelList}}>
       <UserContext.Provider value={{ name: "Ayman", email: "ayman@gmail.com" }}>
         <Header />
-        <Button />
+        <Button/>
         {isOnline ? <Outlet /> : <Offline />}
         <Footer />
       </UserContext.Provider>
