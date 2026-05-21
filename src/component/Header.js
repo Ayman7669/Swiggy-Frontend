@@ -33,12 +33,14 @@ const Header = () => {
           placeholder="search the restaurant..."
           className="search"
           onChange={(e) => {
-            setInput(e.target.value);
-            const filteredHotelList = hotelList.filter((hotel) => {
-              return hotel.info.name
-                .toLowerCase()
-                .includes(input.toLowerCase());
-            });
+            const value = e.target.value; // ✅ capture new value first
+            setInput(value);
+
+            const filteredHotelList = hotelList.filter(
+              (hotel) =>
+                hotel.info.name.toLowerCase().includes(value.toLowerCase()), // ✅ use value, not input // minor mistake set
+            );
+
             setFilteredHotelList(filteredHotelList);
           }}
         />
