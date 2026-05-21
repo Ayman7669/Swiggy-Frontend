@@ -4,7 +4,7 @@ import { brand_URl } from "../utils/constants";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/userContext";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import HotelListContext from "../utils/HotelListCotext";
+import HotelListContext from "../utils/HotelListContext";
 
 const Header = () => {
   const [islogin, setislogin] = useState(false);

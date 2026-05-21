@@ -4,8 +4,8 @@ import resArr from "../utils/dummydata.js";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer.js";
 import { Link } from "react-router-dom";
-import HotelListContext from "../utils/HotelListCotext.js";
-
+import HotelListContext from "../utils/HotelListContext.js";
+import Button from "./Button.js";
 
 const Body = () => {
   const { hotelList, setHotelList, filteredHotelList, setFilteredHotelList } =
@@ -54,7 +54,7 @@ const Body = () => {
 
   return (
     <div className="restaurant-container">
-      
+      <Button />
       {filteredHotelList.map((restaurant) => {
         return (
           <Link
